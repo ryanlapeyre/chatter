@@ -6,6 +6,11 @@
 
 <div data-behavior='messages'>
     <% 1.upto(1000) do %>
-        <div><strong>exicd3:</strong> Hello World</div>    
+        <div><strong>exicd3:</strong> Hello World</div>
     <% end %>
 </div>
+
+
+<% form_for [@chatroom, Message.new] do |f| %>
+    <%= f.text_area :body %>
+<% end %>
