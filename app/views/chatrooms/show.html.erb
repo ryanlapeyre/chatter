@@ -7,7 +7,9 @@
 
 
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-  <!-- <div id="player"></div>
+<div id="player" style="position:absolute; top:0px;"></div>
+
+<script>
 
 
     // 2. This code loads the IFrame Player API code asynchronously.
@@ -22,8 +24,8 @@
     var player;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
-        height: '390',
-        width: '640',
+        height: '480',
+        width: '720',
         videoId: 'M7lc1UVf-VE',
         events: {
           'onReady': onPlayerReady,
@@ -49,8 +51,9 @@
     }
     function stopVideo() {
       player.stopVideo();
-    } -->
-  <script>
+    }
+
+
     window.setInterval(function() {
       var elem = document.getElementById('chatbox');
       elem.scrollTop = elem.scrollHeight;
@@ -58,7 +61,7 @@
 
   </script>
 
-  <div id = "chatbox" style="position:relative; left:900px; overflow-y: auto;  overflow-x: hidden; height: 800px">
+  <div id = "chatbox" style="position:relative; left:850px; overflow-y: auto;  overflow-x: hidden; height: 600px">
 <div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
     <% @messages.each do |message| %>
         <%= render message %>
@@ -66,7 +69,7 @@
 </div>
 </div>
 
-<div style="position:relative; left:900px;">
+<div style="position:relative; left:850px;">
 <%= form_for [@chatroom, Message.new] do |f| %>
     <%= f.text_field :body, rows: 1, class: "col-xs-3", autofocus:true %>
 <% end %>
