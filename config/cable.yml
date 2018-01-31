@@ -7,5 +7,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:5febad905c83c8b2af7e41f2472c6d24@soldierfish.redistogo.com:10360/
+  url: redis://redistogo:4296a8da7ccb337d3098441192a6151e@soldierfish.redistogo.com:10411/
   channel_prefix: chatter_production
